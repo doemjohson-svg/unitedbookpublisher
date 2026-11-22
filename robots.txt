@@ -1,0 +1,25 @@
+# United Book Publisher Robots.txt
+# Block HTTrack, WinHTTrack and offline website scrapers
+User-agent: HTTrack
+Disallow: /
+
+User-agent: WinHTTrack
+Disallow: /
+
+User-agent: WebCopier
+Disallow: /
+
+User-agent: TeleportPro
+Disallow: /
+
+User-agent: Offline Explorer
+Disallow: /
+
+User-agent: Website Copier
+Disallow: /
+
+User-agent: *
+Allow: /
+Disallow: /cdn-cgi/
+
+Sitemap: https://unitedbookpublisher.com/sitemap.xml

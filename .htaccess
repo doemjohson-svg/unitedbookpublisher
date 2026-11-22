@@ -1,0 +1,45 @@
+# United Book Publisher - Apache & LiteSpeed Configuration
+Options -Indexes
+RewriteEngine On
+
+# Redirect removed pages
+RewriteRule ^(customer-reviews|case-study.*)$ / [R=301,L]
+
+# 1. Block HTTrack and website copier tools
+RewriteCond %{HTTP_USER_AGENT} (HTTrack|WinHTTrack|Teleport|Wget|WebCopier|Offline\ Explorer|Website\ Copier|libwww-perl|curl|Go-http-client) [NC]
+RewriteRule .* - [F,L]
+
+# 2. Block hidden files
+RewriteRule "^\." - [F]
+
+# 3. Clean URLs: redirect .html to extensionless URL
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.html [NC]
+RewriteRule ^ %1 [R=301,L]
+
+# 4. Clean URLs: internally rewrite extensionless URL to .html file
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*?)/?$ $1.html [L]
+
+# 5. Default directory index
+DirectoryIndex index.html
+
+# 6. Cache Prevention: Prevent stale browser & proxy cache for HTML
+<IfModule mod_headers.c>
+  # Always fetch fresh HTML so content updates appear immediately without caching issues
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate, max-age=0"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </FilesMatch>
+
+  # CSS and JS headers
+  <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "public, max-age=86400, must-revalidate"
+  </FilesMatch>
+
+  # Media caching
+  <FilesMatch "\.(webp|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf)$">
+    Header set Cache-Control "public, max-age=2592000, stale-while-revalidate=86400"
+  </FilesMatch>
+</IfModule>

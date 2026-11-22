@@ -1,0 +1,216 @@
+/* Custom Fixes for United Book Publishing static site */
+
+/* Eliminate any horizontal scrollbar across all devices and browsers */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* Ensure sections and containers clip horizontal overflow cleanly */
+section,
+main,
+.overflow-x-clip,
+[class*="overflow-x-clip"] {
+  overflow-x: clip !important;
+  max-width: 100% !important;
+}
+
+/* Header & Logo Sizing - Strict Constraints */
+header {
+  min-height: 70px !important;
+}
+
+header .max-w-7xl {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+}
+
+header a img,
+header a img[src*="logo"],
+header img[src*="logo"] {
+  height: 48px !important;
+  max-height: 48px !important;
+  width: auto !important;
+  max-width: 160px !important;
+  object-fit: contain !important;
+  display: block !important;
+  margin: 0 !important;
+}
+
+@media (min-width: 640px) {
+  header a img,
+  header a img[src*="logo"],
+  header img[src*="logo"] {
+    height: 52px !important;
+    max-height: 52px !important;
+    max-width: 180px !important;
+  }
+}
+
+/* Footer Logo Styling */
+footer a img[src*="footer-logo"] {
+  background: #ffffff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  display: block;
+  max-height: 65px !important;
+  width: auto !important;
+  object-fit: contain !important;
+}
+
+/* Contact Form Styling & Clean Field Borders */
+.contact-left {
+  padding-top: 16px !important;
+}
+
+.contact-title {
+  margin-top: 8px !important;
+  line-height: 1.2 !important;
+}
+
+.contact-form .form-floating-group {
+  margin: 12px 0 !important;
+}
+
+.contact-form .grid {
+  gap: 16px !important;
+}
+
+.contact-form .contact-field {
+  background-color: #faf8f5 !important;
+  border: 1.5px solid #dcd7ce !important;
+  border-radius: 6px !important;
+  padding: 22px 14px 8px 14px !important;
+  color: #1f2937 !important;
+  font-size: 15px !important;
+  transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s !important;
+}
+
+.contact-form .contact-field:focus {
+  border-color: #b46c29 !important;
+  background-color: #ffffff !important;
+  box-shadow: 0 0 0 3px rgba(180, 108, 41, 0.15) !important;
+  outline: none !important;
+}
+
+.contact-form textarea.contact-field {
+  min-height: 140px !important;
+}
+
+/* Reset animation offsets and ensure full visibility without clipping */
+[class*="motion-safe:"] {
+  opacity: 1 !important;
+  transform: none !important;
+  translate: 0 0 !important;
+  scale: 1 !important;
+}
+
+.-translate-x-10,
+.translate-x-10,
+.translate-y-8,
+.scale-95 {
+  translate: 0 0 !important;
+  scale: 1 !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Ensure card elements take full available width and do not overlap */
+.choose-card {
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* General image bounds */
+img {
+  max-width: 100%;
+}
+
+/* Dropdown Menu Styles */
+.ubp-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 100;
+  min-width: 260px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  padding: 8px 0;
+  margin-top: 8px;
+  display: none;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.ubp-dropdown-menu.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ubp-dropdown-item {
+  display: block;
+  padding: 8px 18px;
+  font-size: 14px;
+  color: #1f2937;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.ubp-dropdown-item:hover {
+  background-color: #f9fafb;
+  color: #b46c29;
+}
+
+/* Mobile navigation drawer */
+.ubp-mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 9998;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.ubp-mobile-menu-overlay.show {
+  display: block;
+  opacity: 1;
+}
+
+.ubp-mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 85%;
+  max-width: 360px;
+  background: #ffffff;
+  z-index: 9999;
+  padding: 24px;
+  overflow-y: auto;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ubp-mobile-menu.show {
+  transform: translateX(0);
+}
+
+/* Accordion active state */
+.ubp-accordion-active {
+  grid-template-rows: 1fr !important;
+  opacity: 1 !important;
+}
+
+.ubp-accordion-btn.active svg {
+  transform: rotate(45deg);
+  transition: transform 0.25s ease;
+}
