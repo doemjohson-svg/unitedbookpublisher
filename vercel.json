@@ -16,6 +16,21 @@
       "source": "/protect-yourself-from-impersonators",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/genre-guide",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blogs",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blogs/:path*",
+      "destination": "/",
+      "permanent": true
     }
   ],
   "headers": [

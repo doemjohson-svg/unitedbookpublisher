@@ -414,8 +414,6 @@ document.addEventListener('DOMContentLoaded', function () {
   var resourcesLinks = [
     { text: 'Free Book Marketing Guide', href: prefix + 'free-book-marketing-guide' },
     { text: 'Free Book Publishing Guide', href: prefix + 'free-book-publishing-guide' },
-    { text: 'Genre Guide', href: prefix + 'genre-guide' },
-    { text: 'Blogs', href: prefix + 'blogs' },
     { text: 'About Us', href: prefix + 'about-us' },
     { text: 'Contact Us', href: prefix + 'contact-us' }
   ];
@@ -480,7 +478,7 @@ document.addEventListener('DOMContentLoaded', function () {
         '<a href="' + prefix + 'book-publishing" style="font-size:15px; font-weight:600; color:#1f2937; text-decoration:none; padding:6px 0;">Book Publishing</a>' +
         '<a href="' + prefix + 'book-marketing" style="font-size:15px; font-weight:600; color:#1f2937; text-decoration:none; padding:6px 0;">Book Marketing</a>' +
         '<a href="' + prefix + 'pricing" style="font-size:15px; font-weight:600; color:#1f2937; text-decoration:none; padding:6px 0;">Pricing</a>' +
-        '<a href="' + prefix + 'blogs" style="font-size:15px; font-weight:600; color:#1f2937; text-decoration:none; padding:6px 0;">Blogs</a>' +
+        
         '<a href="' + prefix + 'about-us" style="font-size:15px; font-weight:600; color:#1f2937; text-decoration:none; padding:6px 0;">About Us</a>' +
         '<a href="' + prefix + 'contact-us" style="font-size:15px; font-weight:600; color:#1f2937; text-decoration:none; padding:6px 0;">Contact Us</a>' +
       '</nav>' +
