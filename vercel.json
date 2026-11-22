@@ -11,6 +11,11 @@
       "source": "/case-study/:path*",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/protect-yourself-from-impersonators",
+      "destination": "/",
+      "permanent": true
     }
   ],
   "headers": [

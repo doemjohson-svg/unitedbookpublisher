@@ -294,3 +294,15 @@ aside[aria-label="Get started form"].ubp-drawer-open {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+
+/* Hide floating right sidebar (phone, chat, "Let's Get Started" vertical tab) on mobile screens */
+@media (max-width: 768px) {
+  .ubp-floating-sidebar,
+  div[style*="--panel-w"] > div.fixed.right-0,
+  .fixed.right-0.top-1\/2.-translate-y-1\/2.flex-col,
+  .fixed.right-0.top-1\/2.flex-col,
+  a[aria-controls="_R_6adb_"] {
+    display: none !important;
+  }
+}

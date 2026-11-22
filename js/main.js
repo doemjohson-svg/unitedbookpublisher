@@ -417,8 +417,7 @@ document.addEventListener('DOMContentLoaded', function () {
     { text: 'Genre Guide', href: prefix + 'genre-guide' },
     { text: 'Blogs', href: prefix + 'blogs' },
     { text: 'About Us', href: prefix + 'about-us' },
-    { text: 'Contact Us', href: prefix + 'contact-us' },
-    { text: 'Beware of Imitators', href: prefix + 'protect-yourself-from-impersonators' }
+    { text: 'Contact Us', href: prefix + 'contact-us' }
   ];
 
   navButtons.forEach(function(btn) {
