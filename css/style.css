@@ -229,3 +229,68 @@ img {
   transition: transform 0.25s ease;
 }
 
+
+
+/* ========================================================
+   Custom Fixes: Icon Transparency, Drawer & Accordions
+   ======================================================== */
+
+/* Fix black backgrounds on legacy icon images */
+img[src*="icon-"],
+img[src*="msg-icon"],
+img[src*="call-new"] {
+  mix-blend-mode: screen;
+  background-color: transparent !important;
+}
+
+/* Slide-out Contact & Quote Drawer */
+#_R_6adb_.ubp-drawer-open,
+aside[aria-label="Get started form"].ubp-drawer-open {
+  transform: translateY(-50%) translateX(0) !important;
+  visibility: visible !important;
+  z-index: 99999 !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s ease !important;
+}
+
+/* Drawer Backdrop Overlay */
+.ubp-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(2px);
+  z-index: 99998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.ubp-drawer-backdrop.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Success notification inside drawer / forms */
+.ubp-form-success {
+  background: #f0fdf4;
+  border: 1px solid #86efac;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  color: #166534;
+  animation: ubpFadeIn 0.3s ease-out;
+}
+
+@keyframes ubpFadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Pricing box smooth transitions */
+.pricing-tab-fade {
+  animation: ubpTabFade 0.35s ease-out;
+}
+
+@keyframes ubpTabFade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
